@@ -16,15 +16,17 @@ objects:
       name: aws-secret-access-key-secret
     type: Opaque
   - kind: ClusterIssuer
-    apiVersion: cert-manager.io/v1alpha2
+    apiVersion: cert-manager.io/v1
     metadata:
-      name: "${NAME}-production"
+      name: "${NAME}-staging"
     spec:
       acme:
         email: "${ACME_EMAIL}"
-        server: https://acme-v02.api.letsencrypt.org/directory
+        server: https://acme-staging-v02.api.letsencrypt.org/directory
+        #server: https://acme-v02.api.letsencrypt.org/directory
         privateKeySecretRef:
           name: letsencrypt-account-private-key
+        disableAccountKeyGeneration: true
         solvers:
           - selector:
               dnsZones:
