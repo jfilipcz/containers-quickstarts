@@ -8,12 +8,6 @@ metadata:
 labels:
   template: cert-utils-operator-template
 objects:
-  - kind: OperatorGroup
-    apiVersion: operators.coreos.com/v1
-    metadata:
-      name: cert-utils
-    spec:
-      targetNamespaces: []
   - kind: Subscription
     apiVersion: operators.coreos.com/v1alpha1
     metadata:
