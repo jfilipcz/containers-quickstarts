@@ -50,7 +50,7 @@ objects:
     spec:
       secretName: "api-${NAME}-cert"
       issuerRef:
-        name: letsencrypt-staging
+        name: letsencrypt-production
         kind: ClusterIssuer
       dnsNames:
         - "api.${DNS_DOMAIN}"
@@ -62,7 +62,7 @@ objects:
     spec:
       secretName: "ingress-${NAME}-cert"
       issuerRef:
-        name: letsencrypt-staging
+        name: letsencrypt-production
         kind: ClusterIssuer
       dnsNames:
         - "*.apps.${DNS_DOMAIN}"

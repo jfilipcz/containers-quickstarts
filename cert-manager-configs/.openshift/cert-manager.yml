@@ -18,12 +18,12 @@ objects:
   - kind: ClusterIssuer
     apiVersion: cert-manager.io/v1
     metadata:
-      name: "${NAME}-staging"
+      name: "${NAME}-production"
     spec:
       acme:
         email: "${ACME_EMAIL}"
-        server: https://acme-staging-v02.api.letsencrypt.org/directory
-        #server: https://acme-v02.api.letsencrypt.org/directory
+        #server: https://acme-staging-v02.api.letsencrypt.org/directory
+        server: https://acme-v02.api.letsencrypt.org/directory
         privateKeySecretRef:
           name: letsencrypt-account-private-key
         disableAccountKeyGeneration: true
